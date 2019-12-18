@@ -1,18 +1,19 @@
 <?php
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){ 
       include_once ('../db/database.php');
-      $search = $_POST['search'];
-      $query = "SELECT * FROM `bus` WHERE `busname` LIKE '%".$search."%' and origin='".$_POST["origin"]."' and destination='".$_POST["destination"]."' and departure_date='".$_POST["date"]."'";
-      $search_result = searchTable($query);
+
+      $origin=$_POST["origin"];
+      $destination=$_POST["destination"];
+      $date=$_POST["departure_date"];
+
+      // $query="SELECT * FROM `bus` WHERE origin='$origin' and destination='$destination' and date='$date' " ;
+      $query = "SELECT * FROM `bus` ";
+      $results=mysqli_query($conn, $query);
+      $search_result = $results;
 
     }else{
-        $query="SELECT * FROM `bus` where origin='".$_POST["origin"]."' and destination='".$_POST["destination"]."' and departure_date='".$_POST["date"]."' " ;
-        $search_result = searchTable($query);
-    }
-	function searchTable($query){
-        include_once ('../db/database.php');
-        $results=mysqli_query($conn, $query);
-        return $results;
+      header('Location: ./index.php?Booking=error');
+      exit();
     }
 ?>
 <!DOCTYPE html>
@@ -21,9 +22,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/index.css" rel="stylesheet" type="text/css">
-    <link href="css/search.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/search.css" rel="stylesheet" type="text/css">
     <title>Buses Available</title>
   </head>
   <body>
@@ -31,7 +32,7 @@
       <div class="main">
       <div class="navbar">
           <div class="navhead">
-            <img class="img" src="./images/logo2.png" alt="logo">
+            <img class="img" src="../images/logo2.png" alt="logo">
           </div>
           <div class="navbody">
             <ul>
@@ -43,11 +44,10 @@
           </div>
         </div>
         <div class="bus option"> 
-        <form method="POST" action="item.php" autocomplete="off">
-            <h2>Products</h2>
+        <form method="POST" action="searchbus.php" autocomplete="off">
                 <div class="search">
-                    <input type="text" name="search"class="find" placeholder="Search product...">
-                    <button type="submit" name="submit" class="searchbutton" ><i class="fa fa-search"></i></button>
+                    <input type="text" name="search"class="find" placeholder="Search bus...">
+                    <button type="" name="" class="searchbutton" ><i class="fa fa-search"></i></button>
                 </div>
                 <div class="bustable">
                 <table class="table">
@@ -60,23 +60,23 @@
                       <th scope="col">Time</th>
                       <th scope="col">Date</th>
                       <th scope="col">Price</th>
-                      <th scope="col">Action</th>
+                      <th scope="col">Book</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <?php
-                                while($row=mysqli_fetch_assoc($search_result))
+                                while($row=mysqli_fetch_assoc( $search_result))
                                 {
                             ?>
                                     <td><?php echo $row['bus_id'] ?></td>
-                                    <td><?php echo $row['busname'] ?></td>
+                                    <td><?php echo $row['bus_name'] ?></td>
                                     <td><?php echo $row['destination'] ?> </td>
                                     <td><?php echo $row['origin'] ?></td>
                                     <td><?php echo $row['departure_time'] ?></td>
                                     <td><?php echo $row['date'] ?></td>
                                     <td><?php echo $row['fare'] ?></td>
-                                    <td>Action</td>                        </tr>
+                                    <td><a href="pass_details.php?Seats_no='.$req.'& Bus_id='.$Bus_id.'& Total_fare='.$Total_fare.'">Book Now</a></td>                        </tr>
                             <?php
                                     }
                             ?>

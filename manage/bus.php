@@ -11,7 +11,7 @@
         $sql = "INSERT INTO  bussearch (departure,destination, travel_date) 
         VALUES ('$departure', '$destination', '$date')";
         mysqli_query($conn, $sql);
-        header('Location: ../main/item.php?itemadded');
+        header('Location: ../main/searchbus.php?results');
     }
     else{
         header('Location: ../main/index.php');

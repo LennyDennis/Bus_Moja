@@ -33,7 +33,7 @@
             </div>
             <div class="form_right">
                 <h2>Book</h2>
-                <form class="busform" name="busform" id="busform" action="../manage/bus.php" method="POST" autocomplete="off">
+                <form class="busform" name="busform" id="busform" action="../main/searchbus.php" method="POST" autocomplete="off">
                     <div class="departure">
                         <select name="origin" id="origin" class="input" required>
                             <option value="" hidden disabled selected value>Departing from....</option>
@@ -53,9 +53,9 @@
                         </select>
                     </div>
                     <div class="date">
-                        <input name="date" class="input" type="date" id="date" required>
+                        <input name="departure_date" class="input" type="date" id="date" >
                     </div>
-                    <input type="submit" value="Book" class="button" id="bookbus">
+                    <input type="submit" name="submit" value="Book" class="button" id="bookbus">
                 </form>
             </div>
         </div>
@@ -113,6 +113,4 @@
     </div>
   </div>
 </body>
-<script src="js/jquery-3.4.1.js"></script>
-<script src="js/scripts.js"></script>
 </html>
