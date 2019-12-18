@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/index.css" rel="stylesheet" type="text/css">
-  <link href="css/form.css" rel="stylesheet" type="text/css">
+  <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="../css/index.css" rel="stylesheet" type="text/css">
+  <link href="../css/form.css" rel="stylesheet" type="text/css">
   <title>Bus Moja</title>
 </head>
 <body>
   <div class="container-fluid">
     <div class="welcome">
+    <!-- <?php include_once("../main/navbar.php") ?> -->
+
       <div class="navbar">
         <div class="navhead">
-          <img class="img" src="./images/logo2.png" alt="logo">
+          <img class="img" src="../images/logo2.png" alt="logo">
         </div>
-        <div class="navbody">
+         <div class="navbody">
           <ul>
             <li><a class="a" href="#">Home</a></li>
             <li><a class="a" href="#">About Us</a></li>
@@ -21,17 +23,17 @@
             <li><a class="a" href="#">Contact Us</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <div class="content">
         <h1>Bus Moja</h1>
         <p>Welcome to  Bus Moja online booking site></p>
         <div class="booking">
             <div class="form_left">
-                <img src="./images/logo2.png" alt="form">
+                <img src="../images/logo2.png" alt="form">
             </div>
             <div class="form_right">
                 <h2>Book</h2>
-                <form class="busform" name="busform" id="busform" action="./manage/bus.php" method="POST" autocomplete="off">
+                <form class="busform" name="busform" id="busform" action="../manage/bus.php" method="POST" autocomplete="off">
                     <div class="departure">
                         <select name="origin" id="origin" class="input" required>
                             <option value="" hidden disabled selected value>Departing from....</option>
@@ -62,7 +64,7 @@
     <div class="bottom">
       <div class="row slides">
         <div class="col-md-6 about">
-          <img src="./images/bg3.jpeg" alt="bus">
+          <img src="../images/bg3.jpeg" alt="bus">
         </div>
         <div class="col-md-6 text-center side">
           <h1 id="myabout">About Us</h1>
