@@ -3,6 +3,10 @@
     margin:0;
     padding: 0;
 }
+.overlay{
+    background: rgba(235, 93, 50, 0.336);
+    padding-bottom: 350px;
+}
 .container-fluid{
     max-width: 100wh;
     padding: 0px;
