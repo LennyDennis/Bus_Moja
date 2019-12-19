@@ -16,11 +16,6 @@
           <div class="maincontent">
         <?php include_once('./navbar.php');?>
  
-        <?php
-        session_start();
-          $_SESSION['fare']=$_GET['fare'];
-          $_SESSION['bus_id']=$_GET['bus_id'];
-        ?>
           <div class="passenger">
             <div class="form_left">
             </div>
