@@ -54,3 +54,20 @@ tr:nth-child(even){
 tr:nth-child(odd){
 	background-color:  rgba(0,136,169,0.3);
 }
+.table a{
+	text-decoration: none;
+	color: #edf0f1;
+}
+.bookbutton{
+    cursor: pointer;
+    border: none;
+    padding: 6px 20px;
+    font-size: 16px; 
+    background-color:rgba(31, 236, 12, 0.747);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+.bookbutton:hover{
+    background-color:rgba(0, 255, 42, 0.541);
+    transition: all 0.5s ease;
+}

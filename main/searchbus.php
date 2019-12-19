@@ -76,7 +76,8 @@
                                     <td><?php echo $row['departure_time'] ?></td>
                                     <td><?php echo $row['date'] ?></td>
                                     <td><?php echo $row['fare'] ?></td>
-                                    <td><a href="pass_details.php?Seats_no='.$req.'& Bus_id='.$Bus_id.'& Total_fare='.$Total_fare.'">Book Now</a></td>                        </tr>
+                                    <td><a href="pass_details.php?bus_id='.$bus_id.'& fare='.$fare.'" class="bookbutton">Book Now</a></td>                     
+                         </tr>
                             <?php
                                     }
                             ?>
